@@ -1,4 +1,4 @@
-import { mostrarPokemon } from "./mostrarPokemon.js";
+import { mostrarPokemons } from "./mostrarPokemons.js";
 import { searchPokemon } from "./searchPokemon.js";
 
 const buscarBtn = document.getElementById('buscarBtn');
