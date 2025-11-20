@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
-    <h1>Pokédex</h1>
-    <div class="search-container">
-        <input type="text" id="pokemonInput" placeholder="Escribe el nombre o número del Pokémon">
-        <button id="buscarBtn">Buscar</button>
-        <button id="favoritos">agregar a favoritos</button>
-          <!-- Aqui falta  favorito y limpiar  -->
-    </div>
-
-    <div id="pokemonCard" class="card oculto">
-        <h2 id="pokemonNombre"></h2>
-        <img id="pokemonImagen" alt="Imagen del Pokémon">
-        <p><strong>Tipo:</strong> <span id="pokemonTipo"></span></p>
-        <p><strong>Peso:</strong> <span id="pokemonPeso"></span> kg</p>
-    </div>
-    <div id="contenedorPokemons" class="d-flex flex-wrap gap-3">
-        <!-- Aca se van a mostrar los pokemons guardados en localStorage -->
-    </div>
-  <div id="favoritosMostrar" ></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script type="module" src="./scripts/script.js"></script>
+    <main class="container card">
+        <div class="search-container card d-grid gap-3">
+            <h1 class="mb-3">Pokédex</h1>
+            <input type="text" id="pokemonInput" placeholder="Escribe el nombre o número del Pokémon">
+            <button id="buscarBtn" class="btn btn-primary w-50 mx-auto">Buscar</button>
+            <div id="pokemonEncontrado" class="d-flex justify-content-center align-items-center"></div>
+            <button id="favoritos" class="btn btn-primary w-50 mx-auto">agregar a favoritos</button>
+            <button id="borrarDatos" class="btn btn-primary w-50 mx-auto">Borrar datos</button>
+        </div>
+        <div class="card mb-4 d-flex flex-wrap">
+            <h2>Pokemon Buscados </h2>
+            <div id="pokemonsBuscados" class="d-flex flex-wrap gap-3">
+                <!-- Aca se van a mostrar los pokemons guardados en localStorage -->
+            </div>
+        </div>
+        <div class="card mb-4 d-flex flex-wrap">
+            <h2>Pokemons Favoritos</h2>
+            <div id="favoritosMostrar" class="d-flex flex-wrap gap-3"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script type="module" src="./scripts/script.js"></script>
+    </main>
 </body>
 </html>

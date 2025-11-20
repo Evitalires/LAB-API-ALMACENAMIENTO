@@ -1,4 +1,6 @@
 import { mostrarPokemon } from "./mostrarPokemon.js";
+import { saveSearched } from "./saveSearched.js"
+import { actualizarPokemons } from "./actualizarPokemons.js";
 
 export const searchPokemon =(nombrePokemon)=>{
     console.log("entre a search", nombrePokemon)
@@ -11,8 +13,15 @@ export const searchPokemon =(nombrePokemon)=>{
 
         })
         .then(data => {
+            let pokemonEncontrado = document.getElementById("pokemonEncontrado")
+            pokemonEncontrado.innerHTML = ""
+            console.log(data);
             localStorage.setItem("currentPokemon", JSON.stringify(data));
-           mostrarPokemon(data)
+            
+            pokemonEncontrado.appendChild(mostrarPokemon(data))
+            saveSearched(data)
+            //Despues de guardar
+            actualizarPokemons("searched", "pokemonsBuscados")
         })
         .catch(error => {
             alert(error.message);

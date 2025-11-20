@@ -9,7 +9,7 @@ export const updateFavorite = ()=>{
     div.classList.add("col-4", "col-md-2");
 
     div.innerHTML = `
-      <div class="pokemon-card">
+      <div class="pokemon-card card">
         <img src="${poke.img}" width="100">
         <p class="mt-2">${poke.name}</p>
       </div>

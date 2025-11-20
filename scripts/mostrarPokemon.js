@@ -1,15 +1,14 @@
 
-
 export function mostrarPokemon(pokemon) {
     console.log(pokemon)
     const nuevoPokemon = document.createElement("div");
-    nuevoPokemon.className = "pokemonCard"
+    nuevoPokemon.className = "pokemonCard card"
 
     const nombrePokemon = document.createElement("h2")
     nombrePokemon.className = ("pokemonNombre")
     nombrePokemon.textContent = pokemon.name.toUpperCase();
 
-    const imagenPokemon = document.createComment("img");
+    const imagenPokemon = document.createElement("img");
     imagenPokemon.className = "pokemonImagen";
     imagenPokemon.alt = `Imagen del Pokémon ${pokemon.name}`
     imagenPokemon.src = pokemon.sprites.front_default;
