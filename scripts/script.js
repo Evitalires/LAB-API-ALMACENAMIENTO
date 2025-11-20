@@ -1,21 +1,23 @@
-import { MostrarPokemons } from "./mostrarPokemons.js";
 import { saveFavorite } from "./saveFavorite.js";
 import { searchPokemon } from "./searchPokemon.js";
-import { updateFavorite } from "./updateFavoriteList.js";
+import { actualizarPokemons } from "./actualizarPokemons.js";
 
 const buscarBtn = document.getElementById("buscarBtn");
 const pokemonInput = document.getElementById("pokemonInput");
-const pokemonCard = document.getElementById("pokemonCard");
 const botonFavoritos = document.getElementById("favoritos");
+const borrarDatos = document.getElementById("borrarDatos");
 
-const botonLimpiar = document.getElementById("limpiar");
+borrarDatos.addEventListener("click", (e) => {
+    localStorage.clear();
+    let pokemonsBuscados = document.getElementById("pokemonsBuscados")
+    pokemonsBuscados.innerHTML = "";
+    let favoritosMostrar = document.getElementById("favoritosMostrar")
+    favoritosMostrar.innerHTML = "" 
+})
 
-document.addEventListener("DOMContentLoaded", async function () {
-  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
-  console.log("Cargando favoritos...", favoritos);
-
-  MostrarPokemons(favoritos);
+document.addEventListener("DOMContentLoaded", function () {
+    actualizarPokemons("searched", "pokemonsBuscados")
+    actualizarPokemons("favoritos", "favoritosMostrar")
 });
 
 
@@ -24,13 +26,16 @@ buscarBtn.addEventListener("click", () => {
   if (nombrePokemon === "") {
     alert("Por favor, escribe el nombre o número de un Pokémon.");
   }
-
-  searchPokemon(nombrePokemon);
+  else {
+    searchPokemon(nombrePokemon);
+    actualizarPokemons("searched", "pokemonsBuscados")
+  }
 });
 
 botonFavoritos.addEventListener("click", () => {
   let currentPoke = JSON.parse(localStorage.getItem("currentPokemon"));
   saveFavorite(currentPoke);
+  actualizarPokemons("favoritos", "favoritosMostrar")
 });
 
 botonLimpiar.addEventListener("click", () => {

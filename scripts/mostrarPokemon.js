@@ -1,15 +1,17 @@
+
 export function mostrarPokemon(pokemon) {
-  const nuevoPokemon = document.createElement("div");
-  nuevoPokemon.className = "pokemonCard";
+    console.log(pokemon)
+    const nuevoPokemon = document.createElement("div");
+    nuevoPokemon.className = "pokemonCard card"
 
   const nombrePokemon = document.createElement("h2");
   nombrePokemon.className = "pokemonNombre";
   nombrePokemon.textContent = pokemon.name.toUpperCase();
 
-  const imagenPokemon = document.createElement("img");
-  imagenPokemon.className = "pokemonImagen";
-  imagenPokemon.src = pokemon.sprites.front_default;
-  imagenPokemon.alt = `Imagen del Pokémon ${pokemon.name}`;
+    const imagenPokemon = document.createElement("img");
+    imagenPokemon.className = "pokemonImagen";
+    imagenPokemon.alt = `Imagen del Pokémon ${pokemon.name}`
+    imagenPokemon.src = pokemon.sprites.front_default;
 
   const descripcionPokemon = document.createElement("div");
   let tipo = pokemon.types.map(t => t.type.name).join(', ');

@@ -14,7 +14,7 @@ input {
     font-size: 16px;
 }
 
-button {
+.btn-primary {
     padding: 10px 15px;
     font-size: 16px;
     background-color: #ffcb05;
@@ -28,10 +28,9 @@ button:hover {
 }
 
 .card {
+    padding: 15px;
     background-color: white;
     border-radius: 15px;
-    display: inline-block;
-    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 

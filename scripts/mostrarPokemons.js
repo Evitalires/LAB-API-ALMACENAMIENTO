@@ -1,12 +1,19 @@
-// vamos a recibir unarray de pokemos y de aqui
-// llamo a la funcion mostrarPokemon
 import { mostrarPokemon } from "./mostrarPokemon.js";
 
-export const MostrarPokemons = (pokemons) => {
-   const contenedor = document.getElementById("contenedorPokemons");
-  contenedor.innerHTML = "";
+export const mostrarPokemons = (pokemons, contenedor) => {
+    // Asegurarse de que pokemons es un array y no es null
+    if (!Array.isArray(pokemons)) {
+        console.warn("MostrarPokemons recibió algo que no es un array:", pokemons);
+        return; 
+    }
+    
+    let contenedorPokemons = document.getElementById(contenedor);
+    contenedorPokemons.innerHTML = ''; // Limpiar el contenido existente antes de mostrar los nuevos
 
-  pokemons.forEach(pokemon => {
-    contenedor.appendChild(mostrarPokemon(pokemon));
-  });
+    pokemons.forEach(pokemon => {
+        if (pokemon) { // Verificar que el objeto pokemon no sea nulo/undefined
+            let nuevoPokemonCard = mostrarPokemon(pokemon);
+            contenedorPokemons.appendChild(nuevoPokemonCard); // 
+        }
+    });
 }

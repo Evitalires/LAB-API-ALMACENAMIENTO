@@ -1,8 +1,20 @@
-import { MostrarPokemons } from "./mostrarPokemons.js";
+export const updateFavorite = (item, contenedor)=>{
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+  const contenedor = document.getElementById("favoritosMostrar");
 
-export const updateFavorite = ()=>{
-localStorage.removeItem("favoritos");
+  contenedor.innerHTML = ""; 
 
-MostrarPokemons()
- 
+  favoritos.forEach(poke => {
+    const div = document.createElement("div");
+    div.classList.add("col-4", "col-md-2");
+
+    div.innerHTML = `
+      <div class="pokemon-card card">
+        <img src="${poke.img}" width="100">
+        <p class="mt-2">${poke.name}</p>
+      </div>
+    `;
+
+    contenedor.appendChild(div);
+  });
 }
