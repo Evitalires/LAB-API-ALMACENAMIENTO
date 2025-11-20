@@ -1,6 +1,6 @@
 export const updateFavorite = ()=>{
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-  const contenedor = document.getElementById("favoritos");
+  const contenedor = document.getElementById("favoritosMostrar");
 
   contenedor.innerHTML = ""; 
 

@@ -7,13 +7,11 @@ export const searchPokemon =(nombrePokemon)=>{
             if (!response.ok) {
                 throw new Error("Pokémon no encontrado");
             }
-          
-            return response.json();
+         return response.json();
 
         })
         .then(data => {
             localStorage.setItem("currentPokemon", JSON.stringify(data));
-
            mostrarPokemon(data)
         })
         .catch(error => {

@@ -2,7 +2,7 @@
 
 
 export const saveFavorite = (pokemon)=>{
-console.log("estoy en favorito", pokemon)
+
 let arrayfavorito=JSON.parse(localStorage.getItem('favoritos')) ||[];
 
 arrayfavorito.push(pokemon);

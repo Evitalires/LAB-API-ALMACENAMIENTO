@@ -1,4 +1,3 @@
-import { mostrarPokemon } from "./mostrarPokemon.js";
 import { saveFavorite } from "./saveFavorite.js";
 import { searchPokemon } from "./searchPokemon.js";
 
@@ -10,20 +9,18 @@ const botonFavoritos = document.getElementById('favoritos');
 buscarBtn.addEventListener('click', () => {
     const nombrePokemon = pokemonInput.value.toLowerCase().trim();
     if (nombrePokemon === "") {
-        alert("Por favor, escribe el nombre o número de un Pokémon.");
-        return;
+        alert("Por favor, escribe el nombre o número de un Pokémon.");        return;
     }
 
    searchPokemon(nombrePokemon)
   
 });
 
-
 botonFavoritos.addEventListener('click', () => {
-  saveFavorite("ejemploPokemon");
+    let currentPoke = JSON.parse(localStorage.getItem("currentPokemon"))
+  saveFavorite(currentPoke);
 
-}
-       
+}       
     
 );
 
