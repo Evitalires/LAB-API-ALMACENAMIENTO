@@ -7,12 +7,14 @@ const pokemonInput = document.getElementById("pokemonInput");
 const pokemonCard = document.getElementById("pokemonCard");
 const botonFavoritos = document.getElementById("favoritos");
 
-document.addEventListener("DOMContentLoaded", function () {
-  let AllPokemon = JSON.parse(localStorage.getItem("favoritos"));
- console.log("Estoy en la primera carga", AllPokemon)
-  MostrarPokemons(AllPokemon);
- 
+document.addEventListener("DOMContentLoaded", async function () {
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+  console.log("Cargando favoritos...", favoritos);
+
+  MostrarPokemons(favoritos);
 });
+
 
 buscarBtn.addEventListener("click", () => {
   const nombrePokemon = pokemonInput.value.toLowerCase().trim();

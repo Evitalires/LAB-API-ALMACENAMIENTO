@@ -9,7 +9,8 @@ arrayfavorito.push(pokemon);
 console.log(arrayfavorito);
 localStorage.setItem('favoritos', JSON.stringify(arrayfavorito));
 
-//en un array strinfgFy
-// Guardarlo en el localstorage
+
+
+  MostrarPokemons(favoritos);
 
 }
