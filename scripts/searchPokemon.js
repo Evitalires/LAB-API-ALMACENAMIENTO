@@ -12,6 +12,8 @@ export const searchPokemon =(nombrePokemon)=>{
 
         })
         .then(data => {
+            localStorage.setItem("currentPokemon", JSON.stringify(data));
+
            mostrarPokemon(data)
         })
         .catch(error => {
