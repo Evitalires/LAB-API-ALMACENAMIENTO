@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Poke API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pokédex</h1>
+    <div class="search-container">
+        <input type="text" id="pokemonInput" placeholder="Escribe el nombre o número del Pokémon">
+        <button id="buscarBtn">Buscar</button>
+    </div>
+
+    <div id="pokemonCard" class="card oculto">
+        <h2 id="pokemonNombre"></h2>
+        <img id="pokemonImagen" alt="Imagen del Pokémon">
+        <p><strong>Tipo:</strong> <span id="pokemonTipo"></span></p>
+        <p><strong>Peso:</strong> <span id="pokemonPeso"></span> kg</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
